@@ -10,4 +10,4 @@ For This application I used the following technologies:
 ---
 # Wireframe for application:
 
-![My project wireframe](wireframe.jpg)
+![Project wireframe](wireframe.jpg)
