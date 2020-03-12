@@ -11,3 +11,6 @@ For This application I used the following technologies:
 # Wireframe for application:
 
 ![Project wireframe](wireframe.jpg)
+
+---
+
