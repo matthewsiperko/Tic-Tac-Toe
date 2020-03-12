@@ -1,6 +1,10 @@
 'use strict'
 
-// const store = require('../store')
+
+
+const store = require('../store')
+
+
 
 const signUpSuccess = function(data){
     $('#message').text('Signed up successfully')
@@ -20,7 +24,9 @@ const signInSuccess = function(data){
     $('#message').text('Log In Successful!')
     $('#message').removeClass()
     $('#message').addClass('success')
+    store.user = data.user
     console.log('log in success data is: ', data)
+
 }
 
 const signInFailure = function(error){
@@ -30,10 +36,41 @@ const signInFailure = function(error){
     console.log('login failure datais:', error)
 }
 
+const changePasswordSuccess = function(data){
+    $('#message').text('Password change Successful!')
+    $('#message').removeClass()
+    $('#message').addClass('success')
+    console.log('Password change data is: ', data)
+}
+
+const changePasswordFailure = function(error){
+    $('#message').text('Password change failed!')
+    $('#message').removeClass()
+    $('#message').addClass('failure')
+    console.log('password failure datais:', error)
+}
+
+const signOutSuccess = function(data){
+    $('#message').text('Sign Out Successful!')
+    $('#message').removeClass()
+    $('#message').addClass('success')
+    console.log('Sign Out data is: ', data)
+}
+
+const signOutFailure = function(error){
+    $('#message').text('Sign Out change failed!')
+    $('#message').removeClass()
+    $('#message').addClass('failure')
+    console.log('Sign Out failure datais:', error)
+}
 
 module.exports = {
     signUpSuccess,
     signUpFailure,
     signInSuccess,
-    signInFailure
+    signInFailure,
+    changePasswordSuccess,
+    changePasswordFailure,
+    signOutSuccess,
+    signOutFailure
 }
