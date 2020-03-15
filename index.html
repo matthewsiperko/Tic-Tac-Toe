@@ -11,71 +11,38 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+    <body>
+      <header>
+        <h1>Tic Tac Toe</h1>
+        <h4>Player 1 Score: <span id="p1-score">0</span></h4>
+        <h4>Player 2 Score: <span id="p2-score">0</span></h4>
+        <h4>Ties: <span id="tie-games">0</span></h4>
+        <h2>Turn: Player <span id="turn">1</span></h2> 
+      </header>
 
-    <div class="container">
-      <h1>Tic-Tac-Toe</h1>
-      <div class="play-area">
-        <div id="block_0" class="block"></div>
-        <div id="block_1" class="block"></div>
-        <div id="block_2" class="block"></div>
-        <div id="block_3" class="block"></div>
-        <div id="block_4" class="block"></div>
-        <div id="block_5" class="block"></div>
-        <div id="block_6" class="block"></div>
-        <div id="block_7" class="block"></div>
-        <div id="block_8" class="block"></div>
-      </div>
-          <div class="container">
-          <!-- REST OF THE CODE -->
-          <h2 id="winner"></h2>
-          <button onclick="reset_board()">RESET BOARD</button>
-    </div>
-    </div>
+      <p>
 
+      </p>
 
-
-      <!-- <div class="container">
-        <div class="jumbotron">
-            <h1 class="text-center">Tic Tac Toe</h1>
+      <div class="board">
+        <div class="row row-a">
+          <div class="box row-1 col-1 diag-1" id="1"></div>
+          <div class="box row-1 col-2" id="2"></div>
+          <div class="box row-1 col-3 diag-2" id="3"></div>
         </div>
+          <div class="row row-b">
+            <div class="box row-2 col-1" id="1"></div>
+            <div class="box row-2 col-2 diag-1 diag-2" id="2"></div>
+            <div class="box row-2 col-3" id="3"></div>
+          </div>
+          <div class="row row-c">
+            <div class="box row-3 col-1 diag-2" id="1"></div>
+            <div class="box row-3 col-2" id="2"></div>
+            <div class="box row-3 col-3 diag-1" id="3"></div>
+          </div>
       </div>
-
-
-      <h1 id="message"></h1>
-
-
-      <form id="sign-in" class="border">
-        <fieldset>
-          <legend>Log In!</legend>
-          <input type="text" name="credentials[email]" placeholder="poop@butt.com">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="submit" value="Log In!">  
-        </fieldset>
-      </form>
-
-      <form id="change-password" class="border">
-        <fieldset>
-          <legend>Change yo Password</legend>
-          <input type="password" name="passwords[old]" placeholder="Password">
-          <input type="password" name="passwords[new]" placeholder="New Password">
-          <input type="submit" value="Change Password!">  
-        </fieldset>
-      </form>
 
 
       
-      <form id="sign-up" class="border">
-        <fieldset>
-          <legend>Sign Up!</legend>
-          <input type="text" name="credentials[email]" placeholder="poop@butt.com">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <input type="submit" value="Sign Up!">  
-        </fieldset>
-      </form>
-
-      <form id="sign-out" class="border">
-        <input type="submit" value="Sign Out!!!">
-      </form> -->
     </body>
 </html>
