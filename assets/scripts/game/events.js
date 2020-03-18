@@ -1,4 +1,6 @@
 'use strict'
+const   api   = require('./api'),
+        ui    = require('./ui')
 
 let     p1Score         = 0,
         p2Score         = 0,
@@ -6,15 +8,20 @@ let     p1Score         = 0,
         tiedGame        = 0 
     
 const   song    = document.querySelector('.ffsound'),
-        awful = document.querySelector('.awful')
+        awful   = document.querySelector('.awful')
 
 
+
+
+
+/////////////// game scripts /////////////////
 const gameReset= function(){
     $('.box').empty()
     $('div').removeClass('X')
     $('div').removeClass('O')
     player = 'X'
 }
+
 
 const checkForWin = function(letter){
     if($(`.row-1.${letter}`).length === 3 
@@ -35,14 +42,20 @@ const checkForTie = function(){
         tiedGame++
         $('#tie-games').text(tiedGame)
         awful.play()
+        $('.game-board').addClass('hidden')
+        $('.message').text('Terrible!! Try Again')
+        $('.message').removeClass('hidden')
+        $('#main-nav').removeClass('hidden')
         gameReset()
     }
 }
 
 const gameWin = function(){
     song.play()
+    $('.message').removeClass('hidden')
+    $('.message').text(`${player} Is The Winner!`)
     $('.game-board').addClass('hidden')
-    $('#new-game').removeClass('hidden')
+    $('#main-nav').removeClass('hidden')
 }
 
 const playGame = function() {
@@ -73,20 +86,45 @@ const playGame = function() {
     $('#turn').text(player)
 }
 
-const newGame = function(event){
+//////////////// game api calls //////////////
+const onNewGame = function(event) {
     event.preventDefault()
-    $('#new-game').addClass('hidden')
+    api.newGame()
+      .then(ui.newGameSuccess)
+      .catch(ui.newGameFailure)
+}
+
+
+
+
+///////////////  nav scripts //////////////////
+const newGameNav = function(event){
+    event.preventDefault()
+    $('.message').addClass('hidden')
+    $('#main-nav').addClass('hidden')
     $('.game-board').removeClass('hidden')
 }
 
-const signUp = function(event){
+const signUpNav = function(event){
     event.preventDefault()
-    console.log('it works')
+    $('#sign-up').removeClass('hidden')
+    $('#sign-in').addClass('hidden')
+    $('#main-nav').addClass('hidden')
+    $('.message').addClass('hidden')
+}
+
+const changePassNav = function(event){
+    event.preventDefault()
+    $('#change-password').removeClass('hidden')
+    $('#main-nav').addClass('hidden')
+    $('.message').addClass('hidden')
 }
 
 
 module.exports = {
     playGame,
-    newGame,
-    signUp
+    newGameNav,
+    signUpNav,
+    changePassNav,
+    onNewGame
 }

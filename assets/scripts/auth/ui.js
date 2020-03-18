@@ -4,9 +4,10 @@ const store = require('../store')
 
 
 const signUpSuccess = function(data){
-    $('#message').text('Signed up successfully')
-    $('#message').removeClass()
-    $('#message').addClass('success')
+    $('.message').removeClass('hidden')
+    $('.message').text('Signed up successfully')
+    $('#sign-up').addClass('hidden')
+    $('#main-nav').removeClass('hidden')
     console.log('sign up success data is ', data)
 }
 
@@ -18,9 +19,6 @@ const signUpFailure = function(error){
 }
 
 const signInSuccess = function(data){
-    // $('#message').text('Log In Successful!')
-    // $('#message').removeClass()
-    // $('#message').addClass('success')
     $('#sign-in').addClass('hidden')
     $('#main-nav').removeClass('hidden')
     store.user = data.user
@@ -35,9 +33,10 @@ const signInFailure = function(error){
 }
 
 const changePasswordSuccess = function(data){
-    $('#message').text('Password change Successful!')
-    $('#message').removeClass()
-    $('#message').addClass('success')
+    $('.message').text('Password change Successful!')
+    $('.message').removeClass('hidden')
+    $('#main-nav').removeClass('hidden')
+    $('#change-password').addClass('hidden')
     console.log('Password change data is: ', data)
 }
 
@@ -49,9 +48,6 @@ const changePasswordFailure = function(error){
 }
 
 const signOutSuccess = function(data){
-    $('#message').text('Sign Out Successful!')
-    $('#message').removeClass()
-    $('#message').addClass('success')
     console.log('Sign Out data is: ', data)
     $('.game-board').addClass('hidden')
     $('#main-nav').addClass('hidden')

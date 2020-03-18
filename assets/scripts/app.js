@@ -8,13 +8,20 @@ const gameEvents = require('./game/events')
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
-// created user auth 
 $(() => {
+  // auth functions
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
+
+  // main nav functions
+  $('#new-game').on('click', gameEvents.newGameNav)
+  $('.sign-up-link').on('click', gameEvents.signUpNav)
+  $('#change-password-link').on('click', gameEvents.changePassNav)
+
+  //main game functions
   $('.box').on('click', gameEvents.playGame)
-  $('#new-game').on('click', gameEvents.newGame)
-  $('.signing').on('click', gameEvents.signUp)
+  $('#new-game').on('click', gameEvents.onNewGame)
 })
+  
