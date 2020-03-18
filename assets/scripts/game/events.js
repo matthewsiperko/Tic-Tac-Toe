@@ -1,14 +1,15 @@
 'use strict'
-const   api   = require('./api'),
-        ui    = require('./ui')
+const   api     = require('./api'),
+        ui      = require('./ui'),
+        song    = document.querySelector('.ffsound'),
+        awful   = document.querySelector('.awful')
 
 let     p1Score         = 0,
         p2Score         = 0,
         player          = 'X',
         tiedGame        = 0 
     
-const   song    = document.querySelector('.ffsound'),
-        awful   = document.querySelector('.awful')
+
 
 
 
@@ -98,6 +99,7 @@ const onNewGame = function(event) {
 
 
 ///////////////  nav scripts //////////////////
+// move to a nav scripts directory
 const newGameNav = function(event){
     event.preventDefault()
     $('.message').addClass('hidden')
