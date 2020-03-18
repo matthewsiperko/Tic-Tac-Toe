@@ -1,7 +1,4 @@
 'use strict'
-
-
-
 const store = require('../store')
 
 
@@ -21,12 +18,13 @@ const signUpFailure = function(error){
 }
 
 const signInSuccess = function(data){
-    $('#message').text('Log In Successful!')
-    $('#message').removeClass()
-    $('#message').addClass('success')
+    // $('#message').text('Log In Successful!')
+    // $('#message').removeClass()
+    // $('#message').addClass('success')
+    $('#sign-in').addClass('hidden')
+    $('#main-nav').removeClass('hidden')
     store.user = data.user
     console.log('log in success data is: ', data)
-
 }
 
 const signInFailure = function(error){
@@ -55,6 +53,9 @@ const signOutSuccess = function(data){
     $('#message').removeClass()
     $('#message').addClass('success')
     console.log('Sign Out data is: ', data)
+    $('.game-board').addClass('hidden')
+    $('#main-nav').addClass('hidden')
+    $('#sign-in').removeClass('hidden')
 }
 
 const signOutFailure = function(error){

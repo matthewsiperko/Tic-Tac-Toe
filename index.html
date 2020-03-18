@@ -10,39 +10,116 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="https://kit.fontawesome.com/3caabb0d50.js" crossorigin="anonymous"></script>
     </head>
     <body>
       <header>
-        <h1>Tic Tac Toe</h1>
-        <h4>Player 1 Score: <span id="p1-score">0</span></h4>
-        <h4>Player 2 Score: <span id="p2-score">0</span></h4>
-        <h4>Ties: <span id="tie-games">0</span></h4>
-        <h2>Turn: Player <span id="turn">1</span></h2> 
-      </header>
-
-      <p>
-
-      </p>
-
-      <div class="board">
-        <div class="row row-a">
-          <div class="box row-1 col-1 diag-1" id="1"></div>
-          <div class="box row-1 col-2" id="2"></div>
-          <div class="box row-1 col-3 diag-2" id="3"></div>
+        <div class="player1 score-card">
+        <h2>X's</h2> <h3>Wins: <span id="p1-score">0</span></h3>
         </div>
-          <div class="row row-b">
-            <div class="box row-2 col-1" id="1"></div>
-            <div class="box row-2 col-2 diag-1 diag-2" id="2"></div>
-            <div class="box row-2 col-3" id="3"></div>
-          </div>
-          <div class="row row-c">
-            <div class="box row-3 col-1 diag-2" id="1"></div>
-            <div class="box row-3 col-2" id="2"></div>
-            <div class="box row-3 col-3 diag-1" id="3"></div>
-          </div>
-      </div>
+        <div class="player2 score-card">
+        <h2>O's</h2> <h3>Wins: <span id="p2-score">0</span></h3>
+        </div>
+        <h1>Tic Tac Toe</h1>
+
+        <h4>Tied Games: <span id="tie-games">0</span></h4>
+        <h2>Turn: <span id="turn">X</span></h2> 
+      </header>
+        
+        
+
+      <main>
+       <!-- ////////////// Sign up form /////////// -->
+        <form id="sign-up" class="hidden">
+          <fieldset>
+            <legend>Sign Up!!!!</legend>
+            <input type="text" name="credentials[email]" placeholder="email@email.com">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+            <input type="submit" value="Sign up!">
+          </fieldset>
+        </form>
+
+            <!-- //////////////  sign in form ///////////// -->
+        <div>
+          <form id="sign-in" class="login-box">
+            <legend>Log In!!!!</legend>
+            <div class="text-box">
+              <i class="fas fa-user-astronaut"></i>
+              <input type="text" name="credentials[email]" placeholder="email@email.com">
+            </div>
+            <div class="text-box">
+              <i class="fas fa-unlock-alt"></i> 
+               <input type="password" name="credentials[password]" placeholder="password">
+            </div>
+           <div class="btn">
+             <input type="submit" value="Log In!!!">
+           </div>
+            <p>Not a member? <input type="submit" value="Sign Up" class="signing"></p>
+          </form>
+         
+        </div>
+
+        <!-- /////////////// log in nav ///////////////// -->
+        <nav id="main-nav" class="hidden">
+          <button id="new-game">New Game</button>
+          <button id="change-password-link">Change Password</button>
+          <button id="game-stats-link">Game Stats</button>
+          <button id="sign-out">Log Out</button>
+          <button id="delete">Delete Account</button>
+        </nav>
+          
+       
+          <!-- //////////// change password form////////////  -->
+        <form id="change-password" class="hidden">
+          <fieldset>
+            <legend>Change Password!!!!</legend>
+            <input type="password" name="passwords[old]" placeholder="Password">
+            <input type="password" name="passwords[new]" placeholder="New Password">
+            <input type="submit" value="Submit">
+          </fieldset>
+        </form>
 
 
+        <!-- //////////// Game board ////////////////// -->
+        <div class="game-board hidden">
+          <div class="row row-a">
+            <div class="box row-1 col-1 diag-1" id="1"></div>
+            <div class="box row-1 col-2" id="2"></div>
+            <div class="box row-1 col-3 diag-2" id="3"></div>
+          </div>
+            <div class="row row-b">
+              <div class="box row-2 col-1" id="1"></div>
+              <div class="box row-2 col-2 diag-1 diag-2" id="2"></div>
+              <div class="box row-2 col-3" id="3"></div>
+            </div>
+            <div class="row row-c">
+              <div class="box row-3 col-1 diag-2" id="1"></div>
+              <div class="box row-3 col-2" id="2"></div>
+              <div class="box row-3 col-3 diag-1" id="3"></div>
+            </div>
+        </div>
+
+        <!-- //////////////////// sound bites ////////////// -->
+        <audio class="ffsound">
+            <source src="./assets/styles/FF7 AC Victory Fanfare Ringtone (perfected mp3).mp3">
+        </audio>
+        <audio class="awful">
+          <source src="./assets/styles/awful.mp3">
+      </audio>
+      </main>
+
+      <footer>
+        <div class="icons">
+          <i class="fab fa-github"></i> <br>
+          <i class="fab fa-linkedin"></i>
+        </div>
+        <h4>Created by Matthew Siperko</h4>
+        <p> 
+          Software Engineer<br>
+          Team Supreme Leader        
+        </p>
+      </footer>
       
     </body>
 </html>

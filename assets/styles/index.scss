@@ -1,9 +1,102 @@
+
+@import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
+
 body {
-  background-image: url('background.jpg');
+  font-family: 'Special Elite', cursive;
+  background: #f2eecb;
+  margin: 0;
+  padding: 0;
 }
+
 
 h1, h2, h4 {
   text-align: center;
+}
+
+
+header {
+  padding: 20px;
+  box-shadow: 0px 4px 15px #000;
+}
+
+main {
+  height: 650px;
+}
+
+footer {
+  text-align: center;
+}
+
+.login-box {
+  width: 280px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 80px auto;
+}
+
+.login-box legend {
+  font-size: 30px;
+  text-align: center;
+}
+
+
+// .text-box {
+//   width: 100%;
+//   overflow: hidden;
+//   font-size: 20px;
+//   padding: 8px 0;
+//   margin: 8px 0;
+// }
+
+
+input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 20px;
+  width: 200px;
+  margin: 10px;
+  display: block;
+}
+
+.icons {
+  float: left;
+  font-size: 30px;
+  margin: 0 35px;
+  padding: 30px 0;
+}
+
+.text-box i {
+  font-size: 20px;
+  width: 26px;
+  float: left;
+  text-align: center;
+}
+
+
+
+.game-board {
+  padding: 50px;
+}
+
+
+.player1 {
+  float: left;
+}
+
+.player2 {
+  float: right;
+}
+
+.score-card {
+  padding: 30px;
+  height: 100px;
+  width: 200px;
+  box-shadow: 0px 4px 10px #000;
+  text-align: center;
+  font-size: 25px;
 }
 
 .row {
@@ -26,4 +119,12 @@ h1, h2, h4 {
   text-align: center;
   font-size: 5rem;
   padding-top: 40px;
+}
+
+.box:hover {
+  background: #75746F;
+}
+
+.hidden {
+  display: none;
 }
