@@ -1,4 +1,5 @@
 'use strict'
+
 const   api     = require('./api'),
         ui      = require('./ui'),
         song    = document.querySelector('.ffsound'),
@@ -9,10 +10,6 @@ let     p1Score         = 0,
         player          = 'X',
         tiedGame        = 0 
     
-
-
-
-
 
 
 /////////////// game scripts /////////////////
@@ -53,8 +50,6 @@ const checkForTie = function(){
 
 const gameWin = function(){
     song.play()
-    $('.message').removeClass('hidden')
-    $('.message').text(`${player} Is The Winner!`)
     $('.game-board').addClass('hidden')
     $('#main-nav').removeClass('hidden')
 }
@@ -71,6 +66,8 @@ const playGame = function() {
         if(checkForWin('X')){
             p1Score++
             $('#p1-score').text(p1Score)
+            $('.message').removeClass('hidden')
+            $('.message').text(`X Is The Winner!`)
             gameWin()
         }
     } else {
@@ -81,6 +78,8 @@ const playGame = function() {
         if(checkForWin('O')){
             p2Score++
             $('#p2-score').text(p2Score)
+            $('.message').removeClass('hidden')
+            $('.message').text(`O Is The Winner!`)
             gameWin()
         }
     }
