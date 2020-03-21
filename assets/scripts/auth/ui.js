@@ -7,7 +7,7 @@ const signUpSuccess = function(data){
     $('.message').removeClass('hidden')
     $('.message').text('Signed up successfully')
     $('#sign-up').addClass('hidden')
-    $('#main-nav').removeClass('hidden')
+    $('#sign-in').
     console.log('sign up success data is ', data)
 }
 
