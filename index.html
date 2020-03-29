@@ -46,16 +46,16 @@
             <legend>Log In!!!!</legend>
             <div class="text-box">
               <i class="fas fa-user-astronaut"></i>
-              <input type="text" name="credentials[email]" placeholder="email@email.com">
+              <input class="sign-in-text" type="text" name="credentials[email]" placeholder="email@email.com">
             </div>
             <div class="text-box">
               <i class="fas fa-unlock-alt"></i> 
-               <input type="password" name="credentials[password]" placeholder="password">
+               <input class="sign-in-text" type="password" name="credentials[password]" placeholder="password">
             </div>
            <div class="btn">
              <input type="submit" value="Log In!!!">
            </div>
-            <p>Not a member? <input type="submit" value="Sign Up" class="sign-up-link"></p>
+            <p>Not a member? <input type="submit" value="Sign Up" id="sign-up-link"></p>
           </form>
          
         </div>
@@ -69,7 +69,11 @@
         </nav>
 
         <!-- //////////////////// message //////////////////// -->
-        <h1 class="message hidden"></h1>
+        <h1 class="hidden" id="message"></h1>
+        <div id="log-in-link" class="hidden">
+          <button>Log Back In</button>
+        </div>
+        
           
        
           <!-- //////////// change password form////////////  -->
@@ -84,7 +88,7 @@
 
 
         <!-- //////////// Game board ////////////////// -->
-        <div class="game-board hidden">
+        <div class="hidden" id="game-board">
           <div class="row row-a">
             <div class="box row-1 col-1 diag-1" id="1"></div>
             <div class="box row-1 col-2" id="2"></div>
@@ -103,13 +107,13 @@
         </div>
 
         <!-- //////////////////// sound bites ////////////// -->
-        <audio class="ffsound">
+        <!-- <audio class="ffsound">
             <source src="./assets/styles/FF7 AC Victory Fanfare Ringtone (perfected mp3).mp3">
         </audio>
         <audio class="awful">
           <source src="./assets/styles/awful.mp3">
       </audio>
-      </main>
+      </main> -->
 
       <footer>
         <div class="icons">
@@ -118,9 +122,7 @@
         </div>
         <h4>Created by Matthew Siperko</h4>
         <p> 
-          Software Engineer<br>
-          Team Supreme Leader <br>      
-          Jedi Master 
+          Software Engineer
         </p>
       </footer>
       

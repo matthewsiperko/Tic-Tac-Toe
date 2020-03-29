@@ -1,27 +1,27 @@
+
+
 'use strict'
 
 const   api     = require('./api'),
         ui      = require('./ui'),
-        song    = document.querySelector('.ffsound'),
-        awful   = document.querySelector('.awful')
+        store   = require('../store')
+        
 
-let     p1Score         = 0,
-        p2Score         = 0,
-        player          = 'X',
-        tiedGame        = 0 
-    
+let     p1Score  = 0,
+        p2Score  = 0,
+        tiedGame = 0,
+        player   = 'X'
 
 
-/////////////// game scripts /////////////////
-const gameReset= function(){
+/////////////// game logic///////////////////// 
+const gameReset= () => {
     $('.box').empty()
     $('div').removeClass('X')
     $('div').removeClass('O')
     player = 'X'
 }
-
-
-const checkForWin = function(letter){
+        
+const checkForWin = letter => {
     if($(`.row-1.${letter}`).length === 3 
     || $(`.row-2.${letter}`).length === 3 
     || $(`.row-3.${letter}`).length === 3
@@ -35,11 +35,12 @@ const checkForWin = function(letter){
     }
 }
 
-const checkForTie = function(){
+
+       
+const checkForTie = () => {
     if($('.box.X').length + $('.box.O').length === 9){
         tiedGame++
         $('#tie-games').text(tiedGame)
-        awful.play()
         $('.game-board').addClass('hidden')
         $('.message').text('Terrible!! Try Again')
         $('.message').removeClass('hidden')
@@ -48,19 +49,14 @@ const checkForTie = function(){
     }
 }
 
-const gameWin = function(){
-    song.play()
-    $('.game-board').addClass('hidden')
-    $('#main-nav').removeClass('hidden')
-}
 
-const playGame = function() {
-    const boxSelected = $(this)
-    if(boxSelected.hasClass('X') || boxSelected.hasClass('O')){
+        
+const playGame = function(box) {
+    if(box.hasClass('X') || box.hasClass('O')){
         
     } else if(player === 'X'){
-        $(boxSelected).text('X')
-        $(boxSelected).addClass('X')
+        $(box).text(player)
+        $(box).addClass(player)
         player = 'O'
         checkForTie()
         if(checkForWin('X')){
@@ -68,11 +64,12 @@ const playGame = function() {
             $('#p1-score').text(p1Score)
             $('.message').removeClass('hidden')
             $('.message').text(`X Is The Winner!`)
-            gameWin()
+            ui.gameWin()
+            store.winner = 'X'
         }
     } else {
-        $(boxSelected).text('O')
-        $(boxSelected).addClass('O')
+        $(box).text(player)
+        $(box).addClass(player)
         player = 'X'
         checkForTie()
         if(checkForWin('O')){
@@ -80,52 +77,47 @@ const playGame = function() {
             $('#p2-score').text(p2Score)
             $('.message').removeClass('hidden')
             $('.message').text(`O Is The Winner!`)
-            gameWin()
+            ui.gameWin()
+            store.winner = 'O'
         }
     }
     $('#turn').text(player)
 }
 
-//////////////// game api calls //////////////
-const onNewGame = function(event) {
+
+////////////////// API EVENTS ////////////////
+
+              
+const onClick = function(event){
+    const boxSelected = $(this)
+    const boxId = event.target.id
+    playGame(boxSelected)
+    const value = $(`#${boxId}`).text()
+    store.player = value
+    store.id = boxId
+    api.boxClick()
+    .then(ui.gamePushSuccess)
+    .catch(ui.gamePushFailure)
+}
+
+const onNewGame = event => {
     event.preventDefault()
     api.newGame()
       .then(ui.newGameSuccess)
       .catch(ui.newGameFailure)
-}
+  }
 
-
-
-
-///////////////  nav scripts //////////////////
-// move to a nav scripts directory
-const newGameNav = function(event){
+const onGetStats = () => {
     event.preventDefault()
-    $('.message').addClass('hidden')
-    $('#main-nav').addClass('hidden')
-    $('.game-board').removeClass('hidden')
-}
-
-const signUpNav = function(event){
-    event.preventDefault()
-    $('#sign-up').removeClass('hidden')
-    $('#sign-in').addClass('hidden')
-    $('#main-nav').addClass('hidden')
-    $('.message').addClass('hidden')
-}
-
-const changePassNav = function(event){
-    event.preventDefault()
-    $('#change-password').removeClass('hidden')
-    $('#main-nav').addClass('hidden')
-    $('.message').addClass('hidden')
+    api.getStats()
+    .then(ui.statSuccess)
+    .catch(ui.statFailure)
 }
 
 
-module.exports = {
-    playGame,
-    newGameNav,
-    signUpNav,
-    changePassNav,
-    onNewGame
-}
+  module.exports = {
+      playGame,
+      onClick,
+      onNewGame,
+      onGetStats
+  }
