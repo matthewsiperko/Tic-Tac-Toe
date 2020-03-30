@@ -44,7 +44,7 @@ const checkForTie = () => {
         $('.game-board').addClass('hidden')
         $('.message').text('Terrible!! Try Again')
         $('.message').removeClass('hidden')
-        $('#main-nav').removeClass('hidden')
+        $('.main-nav').removeClass('hidden')
         gameReset()
     }
 }
@@ -62,7 +62,6 @@ const playGame = function(box) {
         if(checkForWin('X')){
             p1Score++
             $('#p1-score').text(p1Score)
-            $('.message').removeClass('hidden')
             $('.message').text(`X Is The Winner!`)
             ui.gameWin()
             store.winner = 'X'
@@ -75,7 +74,6 @@ const playGame = function(box) {
         if(checkForWin('O')){
             p2Score++
             $('#p2-score').text(p2Score)
-            $('.message').removeClass('hidden')
             $('.message').text(`O Is The Winner!`)
             ui.gameWin()
             store.winner = 'O'
@@ -107,7 +105,7 @@ const onNewGame = event => {
       .catch(ui.newGameFailure)
   }
 
-const onGetStats = () => {
+const onGetStats = (event) => {
     event.preventDefault()
     api.getStats()
     .then(ui.statSuccess)

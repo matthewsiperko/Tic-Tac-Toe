@@ -30,65 +30,67 @@
 
       <main>
        <!-- ////////////// Sign up form /////////// -->
-        <form id="sign-up" class="hidden">
+        <form class="sign-up hidden">
           <fieldset>
             <legend>Sign Up!!!!</legend>
-            <input type="text" name="credentials[email]" placeholder="email@email.com">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+            <input class="fields" type="text" name="credentials[email]" placeholder="email@email.com">
+            <input class="fields" type="password" name="credentials[password]" placeholder="Password">
+            <input class="fields" type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
             <input type="submit" value="Sign up!">
           </fieldset>
+            <button class="return">Log In</button>
         </form>
 
             <!-- //////////////  sign in form ///////////// -->
         <div>
-          <form id="sign-in" class="login-box">
+          <form class="sign-in login-box">
             <legend>Log In!!!!</legend>
             <div class="text-box">
               <i class="fas fa-user-astronaut"></i>
-              <input class="sign-in-text" type="text" name="credentials[email]" placeholder="email@email.com">
+              <input class="fields" type="text" name="credentials[email]" placeholder="email@email.com">
             </div>
             <div class="text-box">
               <i class="fas fa-unlock-alt"></i> 
-               <input class="sign-in-text" type="password" name="credentials[password]" placeholder="password">
+               <input class="fields" type="password" name="credentials[password]" placeholder="password">
             </div>
-           <div class="btn">
-             <input type="submit" value="Log In!!!">
-           </div>
-            <p>Not a member? <input type="submit" value="Sign Up" id="sign-up-link"></p>
+           <div >
+             <input class="btn" type="submit" value="Log In!!!">
+             <br>
+             <p>Not a member? <input class="btn" type="submit" value="Sign Up" class="sign-up-link"></p>
+            </div>
           </form>
          
         </div>
 
+        <!-- //////////////////////////////////////////////////////////// -->
+        <button class="log-in-link hidden">Log In</button>
+
         <!-- /////////////// log in nav ///////////////// -->
-        <nav id="main-nav" class="hidden">
-          <button id="new-game">New Game</button>
-          <button id="change-password-link">Change Password</button>
-          <button id="game-stats-link">Game Stats</button>
-          <button id="sign-out">Log Out</button>
+        <nav class="main-nav hidden">
+          <button class="btn new-game">New Game</button>
+          <button class="btn change-password-link">Change Password</button>
+          <button class="btn get-stats">Game Stats</button>
+          <button class="btn sign-out">Log Out</button>
         </nav>
 
         <!-- //////////////////// message //////////////////// -->
-        <h1 class="hidden" id="message"></h1>
-        <div id="log-in-link" class="hidden">
-          <button>Log Back In</button>
-        </div>
+        <h1 class="message hidden"></h1>
+
         
           
        
           <!-- //////////// change password form////////////  -->
-        <form id="change-password" class="hidden">
-          <fieldset>
+        <form class="change-password hidden">
             <legend>Change Password!!!!</legend>
-            <input type="password" name="passwords[old]" placeholder="Password">
-            <input type="password" name="passwords[new]" placeholder="New Password">
+            <input class="fields" type="password" name="passwords[old]" placeholder="Password">
+            <input class="fields" type="password" name="passwords[new]" placeholder="New Password">
             <input type="submit" value="Submit">
-          </fieldset>
+          <button class="btn return-nav">Main Menu</button>
         </form>
 
 
         <!-- //////////// Game board ////////////////// -->
-        <div class="hidden" id="game-board">
+        <div class="game-board hidden">
           <div class="row row-a">
             <div class="box row-1 col-1 diag-1" id="1"></div>
             <div class="box row-1 col-2" id="2"></div>
@@ -104,27 +106,34 @@
               <div class="box row-3 col-2" id="2"></div>
               <div class="box row-3 col-3 diag-1" id="3"></div>
             </div>
+            <button class="return-nav">Main Menu</button>
+            <button class="new-game">New Game</button>
         </div>
 
-        <!-- //////////////////// sound bites ////////////// -->
+        <!-- //////////////////// sound bites //////////////  -->
         <!-- <audio class="ffsound">
             <source src="./assets/styles/FF7 AC Victory Fanfare Ringtone (perfected mp3).mp3">
         </audio>
         <audio class="awful">
           <source src="./assets/styles/awful.mp3">
-      </audio>
-      </main> -->
+      </audio> -->
+      </main> 
 
       <footer>
-        <div class="icons">
-          <i class="fab fa-github"></i> <br>
-          <i class="fab fa-linkedin"></i>
-        </div>
         <h4>Created by Matthew Siperko</h4>
         <p> 
           Software Engineer
         </p>
+        <div class="icons">
+          <a href="https://github.com/Msiperko">
+            <i class="fab fa-github"></i> <br>
+          </a>
+          <a href="">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
       </footer>
-      
     </body>
 </html>
+
+      

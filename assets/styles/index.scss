@@ -22,6 +22,7 @@ header {
 }
 
 main {
+  margin-top: 60px;
   height: 650px;
 }
 
@@ -63,11 +64,15 @@ input {
   display: block;
 }
 
+a {
+  color: black; 
+}
+
 .icons {
-  float: left;
+  display: inline-flex;
   font-size: 30px;
-  margin: 0 35px;
-  padding: 30px 0;
+  margin: 0;
+  padding: 0;
 }
 
 .text-box i {
@@ -114,6 +119,25 @@ input {
 
 .col-1, .col-2 {
   border-right: 5px black solid;
+}
+
+.btn {
+  margin: 0 auto;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 20px;
+  width: 200px;
+  margin: 10px;
+  display: block;
+  font-family: 'Special Elite', cursive;
+transition: 1s;
+}
+
+.btn:hover {
+  border-radius: 50%;
+  background: rgb(49, 46, 46);
+  color: rgb(250, 250, 250);
 }
 
 .box {

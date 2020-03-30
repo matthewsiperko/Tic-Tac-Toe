@@ -1,38 +1,49 @@
+'use strict'
 
 
-const newGameNav = function(event){
+
+
+const signUpNav = event => {
     event.preventDefault()
-    $('#message').addClass('hidden')
-    $('#main-nav').addClass('hidden')
-    $('#game-board').removeClass('hidden')
+    $('.sign-up').removeClass('hidden')
+    $('.sign-in').addClass('hidden')
+    $('.main-nav').addClass('hidden')
+    $('.message').addClass('hidden')
 }
 
-const signUpNav = function(event){
+const changePassNav = event => {
     event.preventDefault()
-    $('#sign-up').removeClass('hidden')
-    $('#sign-in').addClass('hidden')
-    $('#main-nav').addClass('hidden')
-    $('#message').addClass('hidden')
+    $('.change-password').removeClass('hidden')
+    $('.main-nav').addClass('hidden')
+    $('.message').addClass('hidden')
 }
 
-const changePassNav = function(event){
+const logInNav = event => {
     event.preventDefault()
-    $('#change-password').removeClass('hidden')
-    $('#main-nav').addClass('hidden')
-    $('#message').addClass('hidden')
+    $('.message').addClass('hidden')
+    $('.log-in-link').addClass('hidden')
+    $('.sign-in').removeClass('hidden')
 }
 
-const logInNav = function(event){
+const navReturn = event => {
     event.preventDefault()
-    $('#message').addClass('hidden')
-    $('#log-in-link').addClass('hidden')
-    $('#sign-in').removeClass('hidden')
+    $('.sign-up').addClass('hidden')
+    $('.sign-in').removeClass('hidden')
+}
+
+const returnMain = event => {
+    event.preventDefault()
+    console.log('mic check')
+    $('.change-password').addClass('hidden')
+    $('.main-nav').removeClass('hidden')
+    $('.game-board').addClass('hidden')
 }
 
 
 module.exports = {
-    newGameNav,
     signUpNav,
     changePassNav,
-    logInNav
+    logInNav,
+    navReturn,
+    returnMain
 }

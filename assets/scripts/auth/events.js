@@ -19,7 +19,7 @@ const onSignIn = function(event) {
     const data = getFormfields(event.target)
     api.signIn(data)
     .then(ui.signInSuccess)
-    .catch(ui.signInfailure)
+    .catch(ui.signInFailure)
 }
 
 const onChangePassword = function(event) {
