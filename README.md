@@ -32,5 +32,6 @@ For This application I used the following technologies:
 ```
 
  # Future updates:
- * 
+ * I would like to add better styling to buttons including centering and hover effects.
+ * I wouldlike to add the ability for a second user to log in and log stats for two opposing users.
 
