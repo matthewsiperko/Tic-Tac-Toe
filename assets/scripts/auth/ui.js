@@ -48,7 +48,6 @@ const signInSuccess = function(data){
 }
 
 const signInFailure = function(){
-    console.log('mic check')
     failure()
 }
 
