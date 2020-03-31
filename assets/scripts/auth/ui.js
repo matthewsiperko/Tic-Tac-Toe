@@ -36,7 +36,7 @@ const signUpSuccess = function(data){
 
 const signUpFailure = function(error){
     $('.message').text('Sign up Failed!!!!')
-    $('.message').removeClass()
+    $('.message').removeClass('hidden')
     failure()
 }
 
