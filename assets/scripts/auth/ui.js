@@ -41,7 +41,7 @@ const signUpFailure = function(error){
 }
 
 const signInSuccess = function(data){
-    $('.sign-in').addClass('hidden')
+    $('.form').addClass('hidden')
     $('.main-nav').removeClass('hidden')
     store.user = data.user 
     success()
@@ -69,7 +69,7 @@ const changePasswordFailure = function(error){
 const signOutSuccess = function(data){
     $('.game-board').addClass('hidden')
     $('.main-nav').addClass('hidden')
-    $('.sign-in').removeClass('hidden')
+    $('.form').removeClass('hidden')
     $('.message').addClass('hidden')
 }
 
@@ -77,8 +77,8 @@ const signOutFailure = function(error){
     $('.message').text('Sign Out change failed!')
     $('.message').removeClass()
     $('.message').addClass('failure')
-
 }
+
 
 module.exports = {
     signUpSuccess,
