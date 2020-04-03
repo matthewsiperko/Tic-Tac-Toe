@@ -18,11 +18,13 @@ const newGameFailure = (error) => {
 const gamePushSuccess = (data) => {
     $('.message').removeClass('hidden')
     $('.message').text('Game saved!')
+    console.log(data)
 }
 
 const gamePushFailure = (error) => {
     $('.message').removeClass('hidden')
     $('.message').text('Game save Failure!')
+    console.log(error)
 }
 
 const statSuccess = (data) => {
