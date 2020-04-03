@@ -69,7 +69,7 @@ const changePasswordFailure = function(error){
 const signOutSuccess = function(data){
     $('.game-board').addClass('hidden')
     $('.main-nav').addClass('hidden')
-    $('.form').removeClass('hidden')
+    $('.sign-in-form').removeClass('hidden')
     $('.message').addClass('hidden')
 }
 
