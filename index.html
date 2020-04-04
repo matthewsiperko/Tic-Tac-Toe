@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="https://kit.fontawesome.com/3caabb0d50.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+      <header>
+        <div class="player1 score-card">
+        <h2>X's</h2> <h3>Wins: <span id="p1-score">0</span></h3>
+        </div>
+        <div class="player2 score-card">
+        <h2>O's</h2> <h3>Wins: <span id="p2-score">0</span></h3>
+        </div>
+        <h1>Tic Tac Toe</h1>
+
+        <h4>Tied Games: <span id="tie-games">0</span></h4>
+        <h2>Turn: <span id="turn">X</span></h2> 
+      </header>
+        
+        
+
+      <main>
+       <!-- ////////////// Sign up form /////////// -->
+        <form class="sign-up hidden">
+            <legend>Sign Up!!!!</legend>
+            <input class="fields" type="text" name="credentials[email]" placeholder="email@email.com">
+            <input class="fields" type="password" name="credentials[password]" placeholder="Password">
+            <input class="fields" type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+            <input class="btn" type="submit" value="Sign up!">
+            <button class="btn return">Log In</button>
+        </form>
+
+            <!-- //////////////  sign in form ///////////// -->
+        <div class="sign-in-form">
+          <form class="sign-in">
+            <div>
+            <legend>Log In!!!!</legend>
+            <div class="text-box">
+              <i class="fas fa-user-astronaut"></i>
+              <input class="fields" type="text" name="credentials[email]" placeholder="email@email.com">
+            </div>
+            <div class="text-box">
+              <i class="fas fa-unlock-alt"></i> 
+               <input class="fields" type="password" name="credentials[password]" placeholder="password">
+            </div>
+           <div >
+             <input class="btn" type="submit" value="Log In!!!">
+            </div>
+          </div>
+        </form>
+          <p>Not a member? <button class="btn sign-up-link">Sign Up</button> </p>
+        </div>
+            
+          
+         
+
+        <!-- //////////////////////////////////////////////////////////// -->
+        <button class="log-in-link hidden btn">Log In</button>
+
+        <!-- /////////////// log in nav ///////////////// -->
+        <nav class="main-nav hidden">
+          <button class="btn new-game">New Game</button>
+          <button class="btn change-password-link">Change Password</button>
+          <button class="btn get-stats">Game Stats</button>
+          <button class="btn sign-out">Log Out</button>
+        </nav>   
+
+        <!-- //////////////////// message //////////////////// -->
+        <h1 class="message hidden"></h1>
+        <h3 class="save-message hidden"></h3>
+
+        
+          
+       
+          <!-- //////////// change password form////////////  -->
+        <form class="change-password hidden">
+            <legend>Change Password!!!!</legend>
+            <input class="fields" type="password" name="passwords[old]" placeholder="Password">
+            <input class="fields" type="password" name="passwords[new]" placeholder="New Password">
+            <input class="btn" type="submit" value="Submit">
+          <button class="btn return-nav">Main Menu</button>
+        </form>
+
+
+        <!-- //////////// Game board ////////////////// -->
+        <div class="game-board hidden">
+          <div class="row row-a">
+            <div class="box row-1 col-1 diag-1" id="0"></div>
+            <div class="box row-1 col-2" id="1"></div>
+            <div class="box row-1 col-3 diag-2" id="2"></div>
+          </div>
+            <div class="row row-b">
+              <div class="box row-2 col-1" id="3"></div>
+              <div class="box row-2 col-2 diag-1 diag-2" id="4"></div>
+              <div class="box row-2 col-3" id="5"></div>
+            </div>
+            <div class="row row-c">
+              <div class="box row-3 col-1 diag-2" id="6"></div>
+              <div class="box row-3 col-2" id="7"></div>
+              <div class="box row-3 col-3 diag-1" id="8"></div>
+            </div>
+            <button class="return-nav btn">Main Menu</button>
+            <button class="btn new-game">New Game</button>
+        </div>
+
+        <!-- //////////////////// sound bites //////////////  -->
+        <!-- <audio class="ffsound">
+            <source src="./assets/styles/FF7 AC Victory Fanfare Ringtone (perfected mp3).mp3">
+        </audio>
+        <audio class="awful">
+          <source src="./assets/styles/awful.mp3">
+      </audio> -->
+      </main> 
+
+      <footer>
+        <h4>Created by Matthew Siperko</h4>
+        <p> 
+          Software Engineer
+        </p>
+        <div class="icons">
+          <a href="https://github.com/Msiperko">
+            <i class="fab fa-github"></i> <br>
+          </a>
+          <a href="">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </footer>
+    </body>
+</html>
+
+      
