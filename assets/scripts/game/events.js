@@ -88,14 +88,13 @@ const playGame = function(box) {
 
               
 const onClick = function(event){
+    event.preventDefault()
     const boxSelected = $(this)
     const boxId = event.target.id
     playGame(boxSelected)
     const value = $(`#${boxId}`).text()
     store.player = value
     store.id = boxId
-    console.log(value)
-    console.log(boxId)
     api.boxClick()
     .then(ui.gamePushSuccess)
     .catch(ui.gamePushFailure)

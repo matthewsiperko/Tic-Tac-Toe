@@ -9,7 +9,7 @@ const newGameSuccess = (data) => {
     $('.main-nav').addClass('hidden')
     $('.game-board').removeClass('hidden')
 }
-
+   
 const newGameFailure = (error) => {
     $('.message').removeClass('hidden')
     $('.message').text('Game failed. Try again')
@@ -18,21 +18,18 @@ const newGameFailure = (error) => {
 const gamePushSuccess = (data) => {
     $('.save-message').removeClass('hidden')
     $('.save-message').text('Game saved!')
-    console.log(data)
-
+    console.log(store.game)
 }
 
 const gamePushFailure = (error) => {
     $('.save-message').removeClass('hidden')
     $('.save-message').text('Game save Failure!')
-    console.log(error)
-    console.log('*****store*****')
-    console.log(store)
 }
 
 const statSuccess = (data) => {
     $('.message').removeClass('hidden')
     $('.message').text(`You have played ${data.games.length} games!`)
+    console.log(data)
 }
 
 const statFailure = (error) => {

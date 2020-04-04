@@ -26,7 +26,6 @@ $(() => {
   //game functions
   $('.new-game').on('click', gameEvents.onNewGame)
   $('.box').on('click', gameEvents.onClick)
-  $('.new-game').on('click', gameEvents.onNewGame)
   $('.get-stats').on('click', gameEvents.onGetStats)
 })
   
