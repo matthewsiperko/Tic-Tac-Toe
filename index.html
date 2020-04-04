@@ -31,14 +31,12 @@
       <main>
        <!-- ////////////// Sign up form /////////// -->
         <form class="sign-up hidden">
-          <fieldset>
             <legend>Sign Up!!!!</legend>
             <input class="fields" type="text" name="credentials[email]" placeholder="email@email.com">
             <input class="fields" type="password" name="credentials[password]" placeholder="Password">
             <input class="fields" type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
             <input class="btn" type="submit" value="Sign up!">
-          </fieldset>
-            <button class="return btn">Log In</button>
+            <button class="btn return">Log In</button>
         </form>
 
             <!-- //////////////  sign in form ///////////// -->
@@ -66,7 +64,7 @@
          
 
         <!-- //////////////////////////////////////////////////////////// -->
-        <button class="log-in-link hidden">Log In</button>
+        <button class="log-in-link hidden btn">Log In</button>
 
         <!-- /////////////// log in nav ///////////////// -->
         <nav class="main-nav hidden">
@@ -78,6 +76,7 @@
 
         <!-- //////////////////// message //////////////////// -->
         <h1 class="message hidden"></h1>
+        <h3 class="save-message hidden"></h3>
 
         
           
@@ -95,19 +94,19 @@
         <!-- //////////// Game board ////////////////// -->
         <div class="game-board hidden">
           <div class="row row-a">
-            <div class="box row-1 col-1 diag-1" id="1"></div>
-            <div class="box row-1 col-2" id="2"></div>
-            <div class="box row-1 col-3 diag-2" id="3"></div>
+            <div class="box row-1 col-1 diag-1" id="0"></div>
+            <div class="box row-1 col-2" id="1"></div>
+            <div class="box row-1 col-3 diag-2" id="2"></div>
           </div>
             <div class="row row-b">
-              <div class="box row-2 col-1" id="1"></div>
-              <div class="box row-2 col-2 diag-1 diag-2" id="2"></div>
-              <div class="box row-2 col-3" id="3"></div>
+              <div class="box row-2 col-1" id="3"></div>
+              <div class="box row-2 col-2 diag-1 diag-2" id="4"></div>
+              <div class="box row-2 col-3" id="5"></div>
             </div>
             <div class="row row-c">
-              <div class="box row-3 col-1 diag-2" id="1"></div>
-              <div class="box row-3 col-2" id="2"></div>
-              <div class="box row-3 col-3 diag-1" id="3"></div>
+              <div class="box row-3 col-1 diag-2" id="6"></div>
+              <div class="box row-3 col-2" id="7"></div>
+              <div class="box row-3 col-3 diag-1" id="8"></div>
             </div>
             <button class="return-nav btn">Main Menu</button>
             <button class="new-game btn">New Game</button>

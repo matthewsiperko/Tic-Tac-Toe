@@ -52,8 +52,9 @@ const checkForTie = () => {
 
         
 const playGame = function(box) {
+    $('.message').text('')
     if(box.hasClass('X') || box.hasClass('O')){
-        
+        $('.message').text('Choose a different square')
     } else if(player === 'X'){
         $(box).text(player)
         $(box).addClass(player)
@@ -93,6 +94,8 @@ const onClick = function(event){
     const value = $(`#${boxId}`).text()
     store.player = value
     store.id = boxId
+    console.log(value)
+    console.log(boxId)
     api.boxClick()
     .then(ui.gamePushSuccess)
     .catch(ui.gamePushFailure)
@@ -100,6 +103,7 @@ const onClick = function(event){
 
 const onNewGame = event => {
     event.preventDefault()
+    gameReset()
     api.newGame()
       .then(ui.newGameSuccess)
       .catch(ui.newGameFailure)

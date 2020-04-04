@@ -44,6 +44,7 @@ const signUpFailure = function(error){
 const signInSuccess = function(data){
     $('.sign-in-form').addClass('hidden')
     $('.main-nav').removeClass('hidden')
+    $('.sign-up-link').addClass('hidden')
     store.user = data.user 
     success()
 }

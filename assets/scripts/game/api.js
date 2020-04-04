@@ -24,6 +24,8 @@ const boxClick = () => {
       over: !store.game.over
     }
   }
+  console.log('****gameMem*****')
+  console.log(gameMem)
   return $.ajax({
     url: config.apiUrl + 'games/' + store.game.id,
     method: 'PATCH',
