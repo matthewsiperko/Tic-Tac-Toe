@@ -19,14 +19,15 @@ const gamePushSuccess = (data) => {
     $('.save-message').removeClass('hidden')
     $('.save-message').text('Game saved!')
     console.log(data)
-    console.log('*****store*****')
-    console.log(store)
+
 }
 
 const gamePushFailure = (error) => {
     $('.save-message').removeClass('hidden')
     $('.save-message').text('Game save Failure!')
     console.log(error)
+    console.log('*****store*****')
+    console.log(store)
 }
 
 const statSuccess = (data) => {
